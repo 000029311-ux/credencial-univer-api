@@ -7,7 +7,6 @@ const conexion = mysql.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: Number(process.env.DB_PORT) || 3306,
-
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -15,7 +14,7 @@ const conexion = mysql.createPool({
 
 conexion.getConnection((error, connection) => {
     if (error) {
-        console.error("Error al conectar con MySQL:", error.message);
+        console.error("Error al conectar con MySQL:", error);
         return;
     }
 

@@ -23,6 +23,14 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+app.get("/api/prueba-cors", (req, res) => {
+    res.json({
+        mensaje: "La versión nueva de la API está funcionando",
+        cors: res.getHeader("Access-Control-Allow-Origin")
+    });
+});
+
+
 const PORT = process.env.PORT || 3000;
 
 console.log("API_BASE_URL:", process.env.API_BASE_URL);

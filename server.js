@@ -407,8 +407,8 @@ app.post("/api/alumnos/guardar", (req, res) => {
         const alumnoId = resultados[0].id;
 
         // Crear las rutas donde se guardarán los archivos
-        const carpetaFotos = path.join(__dirname, "uploads", "fotos");
-        const carpetaFirmas = path.join(__dirname, "uploads", "firmas");
+        const carpetaFotos = path.join(__dirname, "subidas", "fotos");
+        const carpetaFirmas = path.join(__dirname, "subidas", "firmas");
 
         // Crear las carpetas si todavía no existen
         fs.mkdirSync(carpetaFotos, { recursive: true });
@@ -433,7 +433,7 @@ app.post("/api/alumnos/guardar", (req, res) => {
                 Buffer.from(datosFoto, "base64")
             );
 
-            rutaFoto = `uploads/fotos/${nombreFoto}`;
+            rutaFoto = `subidas/fotos/${nombreFoto}`;
         }
 
         // Guardar firma
@@ -455,7 +455,7 @@ app.post("/api/alumnos/guardar", (req, res) => {
                 Buffer.from(datosFirma, "base64")
             );
 
-            rutaFirma = `uploads/firmas/${nombreFirma}`;
+            rutaFirma = `subidas/firmas/${nombreFirma}`;
         }
 
         const sqlActualizar = `

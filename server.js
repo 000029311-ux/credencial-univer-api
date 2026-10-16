@@ -23,6 +23,8 @@ app.use((req, res, next) => {
 
 app.use(express.json({ limit: "10mb" }));
 
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 app.get("/api/prueba-cors", (req, res) => {
     res.json({
         mensaje: "La versión nueva de la API está funcionando",

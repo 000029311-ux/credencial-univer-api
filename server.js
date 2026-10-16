@@ -130,7 +130,9 @@ app.get("/api/alumnos/matricula/:matricula", (req, res) => {
         cuatrimestre,
         campus,
         aula,
-        contacto_emergencia
+        contacto_emergencia,
+        fotografia,
+        firma
     FROM alumnos
     WHERE matricula = ?
 `;

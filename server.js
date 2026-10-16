@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use(express.json({ limit: "10mb" }));
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/subidas", express.static(path.join(__dirname, "subidas")));
 
 app.get("/api/prueba-cors", (req, res) => {
     res.json({
